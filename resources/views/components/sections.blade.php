@@ -1,14 +1,69 @@
+@section('nav-menu-items')
+    @php
+        $currentRouteName = Route::currentRouteName();
+        $routesToImplement = [
+            [
+                'routeName' => 'home',
+                'routeLabel' => 'Home',
+            ],
+            [
+                'routeName' => 'about_us',
+                'routeLabel' => 'About Us',
+            ],
+            [
+                'routeName' => 'contact_us',
+                'routeLabel' => 'Contact Us',
+            ],
+            [
+                'routeName' => 'shop',
+                'routeLabel' => 'Shop',
+            ],
+            [
+                'routeName' => 'blog',
+                'routeLabel' => 'Blog',
+            ],
+            [
+                'routeName' => 'faqs',
+                'routeLabel' => 'Faqs',
+            ],
+        ];
+    @endphp
+    @foreach ($routesToImplement as $routeAssoc)
+        <li class="hover:text-gray-500">
+            <label class="text-center content-center" for="smallscreen-menu-toggle">
+                @php
+                    $routeNames = [$routeAssoc['routeName'] ?? null, $routeAssoc['routeUrl'] ?? null];
+                    $isActive = in_array($currentRouteName, $routeNames);
+                @endphp
+
+                @php
+                    $linkClass = $isActive
+                        ? 'text-neutral-600 drop-shadow-md drop-shadow-amber-300 cursor-default'
+                        : '';
+                @endphp
+
+                @php
+                    $href = '';
+                    if ($routeAssoc['routeName']) {
+                        $href = $currentRouteName === $routeAssoc['routeName'] ? '#' : route($routeAssoc['routeName']);
+                    } elseif ($routeAssoc['routeUrl']) {
+                        $href = $currentRouteName === $routeAssoc['routeUrl'] ? '#' : $routeAssoc['routeUrl'];
+                    }
+                @endphp
+
+                <a class="{{ $linkClass }}" href="{{ $href }}"
+                    @if ($isActive) onclick="event.preventDefault();" @endif>
+                    {{ $routeAssoc['routeLabel'] }}
+                </a>
+            </label>
+        </li>
+    @endforeach
+@endsection
+
 @section('common-menu-items')
     <li class="hover:text-gray-500 cursor-pointer">Home</li>
     <li class="hover:text-gray-500 cursor-pointer">About Us</li>
     <li class="hover:text-gray-500 cursor-pointer">Contact Us</li>
-@endsection
-
-@section('main-menu-items')
-    @yield('common-menu-items')
-    <li class="hover:text-gray-500 cursor-pointer">Shop</li>
-    <li class="hover:text-gray-500 cursor-pointer">Blog</li>
-    <li class="hover:text-gray-500 cursor-pointer">FAQs</li>
 @endsection
 
 @section('accessibility-options')

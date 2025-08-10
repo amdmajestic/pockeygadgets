@@ -42,7 +42,7 @@
             <h1 class="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Cutomer Support</h1>
             <div>
                 <ul
-                    class="list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-xs sm:text-sm md:text-base 2xl:text-xl">
+                    class="[&>*]:text-white list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-xs sm:text-sm md:text-base 2xl:text-xl">
                     @section('common-menu-items')
                         @parent
                     @show
