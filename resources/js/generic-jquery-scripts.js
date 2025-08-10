@@ -1,5 +1,10 @@
 $(document).ready(function () {
+    adjust_main_content_container();
     implement_dropdownBtns_translate_offs();
+});
+
+$(window).resize(function () {
+    adjust_main_content_container();
 });
 
 function implement_dropdownBtns_translate_offs() {
@@ -14,4 +19,15 @@ function implement_dropdownBtns_translate_offs() {
             }
         });
     });
+}
+
+function adjust_main_content_container() {
+    const fitnessHeightInc = 25
+    if (
+        parseInt($("main").css("padding-top")) !==
+        $("header").outerHeight() + fitnessHeightInc
+    ) {
+        $("main").css("padding-top", $("header").outerHeight() + fitnessHeightInc);
+        // $("main").addClass(`pt-[${parseInt($("header").css("height")) + 100}px]`);
+    }
 }

@@ -1,16 +1,15 @@
 <footer
-    {{-- class="-z-2 mt-10 flex flex-col justify-between min-h-56 md:min-h-80  max-h-fit w-full bg-neutral-900 text-white text-sm lg:text-base"> --}}
-    class="-z-2 lg:fixed lg:bottom-0 mt-10 flex flex-col justify-between min-h-56 md:min-h-80  max-h-fit w-full bg-neutral-900 text-white text-sm lg:text-base">
-    {{-- <div class="w-full max-h-1/2 flex flex-row justify-around gap-16 text-white"> --}}
+    class="mt-10 flex flex-col justify-between min-h-56  max-h-fit min-w-full max-w-full bg-neutral-900 text-white text-xs sm:text-sm md:text-base 2xl:text-xl">
     <div
-        class="w-full max-h-1/2 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-16 justify-center items-center py-18 px-24">
+        class="w-full max-h-1/2 grid grid-cols-[repeat(auto-fit,minmax(250px,auto))] gap-16 justify-center items-center py-18 px-24">
 
         <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
             <div class="w-24">
                 <img src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/pockey-logo-dark-scaled.webp"
                     alt="PockeyGadgets Logo" />
             </div>
-            <p class="text-sm lg:text-base">Whether you're a trendsetter, a minimalist, or an adventurer at heart, Pockey
+            <p class="text-xs sm:text-sm md:text-base 2xl:text-xl">Whether you're a trendsetter, a minimalist, or an
+                adventurer at heart, Pockey
                 Gadgets has something for
                 everyone. Our diverse range of styles caters to various personas.</p>
             {{-- <div class="flex space-x-4">
@@ -42,7 +41,8 @@
         <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
             <h1 class="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Cutomer Support</h1>
             <div>
-                <ul class="list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-sm lg:text-base">
+                <ul
+                    class="list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-xs sm:text-sm md:text-base 2xl:text-xl">
                     @section('common-menu-items')
                         @parent
                     @show
@@ -53,7 +53,8 @@
         <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
             <h1 class="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Accessibility</h1>
             <div>
-                <ul class="list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-sm lg:text-base">
+                <ul
+                    class="list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-xs sm:text-sm md:text-base 2xl:text-xl">
                     @yield('accessibility-options')
                 </ul>
             </div>
@@ -61,7 +62,9 @@
         <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
             <h1 class="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Let's get in touch</h1>
             <label for="visitor-email">
-                <span class="list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-sm lg:text-base">Sign up to get first
+                <span
+                    class="list-none flex flex-col gap-1 lg:gap-2 2xl:gap-3 text-xs sm:text-sm md:text-base 2xl:text-xl">Sign
+                    up to get first
                     dibs on new
                     arrivals, sales, exclusive content, events and
                     more! </span></label>
@@ -76,13 +79,13 @@
             </div>
         </div>
     </div>
-    <hr class="text-neutral-700 shadow-inner shadow-gray-800 opacity-70 -z-1">
-    <div class="py-6 px-24 flex flex-row justify-between gap-14 items-center realtive">
+    <hr class="text-neutral-700 shadow-inner shadow-gray-800 opacity-70">
+    <div class="py-6 px-24 flex flex-col md:flex-row justify-between gap-10 sm:gap-14 items-center realtive">
         <div>
             &copy; {{ date('Y') }} Pockey Gadgets All rights reserved. Designed by <a
                 href="https://pockeygadgets.co.uk/" class="text-orange-500">Pockey Gadgets</a>
         </div>
-        <div class="flex gap-4 items-center mr-10">
+        <div class="flex flex-col sm:flex-row gap-6 sm:gap-4 items-center pb-10 sm:pb-0">
             <span class="flex flex-col gap-0 rounded">
                 <span class="bg-blue-950 basis-1/12 mx-0.5 6 rounded-t-lg shadow-sm shadow-blue-950 p-0.5">
                 </span>

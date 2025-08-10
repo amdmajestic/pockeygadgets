@@ -1,5 +1,5 @@
 <header
-    class="fixed top-0 px-22 w-[100vw] h-28 sm:h-24 bg-white flex flex-col sm:flex-row justify-between items-center shadow-lg shadow-gray-100">
+    class="fixed top-0 px-22 pb-4 sm:pb-0 min-w-full max-w-full h-32 sm:h-24 bg-white flex flex-col sm:flex-row justify-between items-center shadow-lg shadow-gray-100">
     <menu class="max-h-full flex flex-row gap-15 justify-left items-center basis-2/3">
         <div>
             <div class="w-24">
@@ -14,7 +14,7 @@
             @include('templates.sidebar')
         </div>
     </menu>
-    <nav class="flex flex-wrap justify-around gap-4 max-w-56">
+    <nav class="flex flex-wrap justify-around gap-4 max-w-56 pt-4 sm:pt-0">
         <span class="iconify hover:text-gray-500 cursor-pointer" data-icon="oui-search" data-width="24"
             data-height="24"></span>
         <span class="iconify hover:text-gray-500 cursor-pointer" data-icon="mdi-account" data-width="24"

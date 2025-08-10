@@ -11,7 +11,7 @@
     @vite('resources/js/generic-jquery-scripts.js')
 </head>
 
-<body class="max-w-full max-h-full">
+<body class="w-full h-screen">
     @include('templates.header')
     @include('templates.main-content')
     @include('templates.footer')

@@ -1,3 +1,3 @@
-<main class="min-h-4/5 pt-32 p-16 ">
+<main class="min-h-[75vmax] p-16">
     MAIN CONTENT
 </main>
