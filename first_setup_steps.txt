@@ -1,0 +1,11 @@
+<#  <.ps1 (Powershell)> ||| copy & paste following commented commands to powershell terminal
+        <# 1)#>  $b=0; gc first_setup_steps.txt | % { if($_ -match '<#'){ $b=1 }; if(-not $b){ $l=($_ -replace '#.*','').Trim(); if($l){ iex $l } }; if($_ -match '#>'){ $b=0 } }
+#>
+composer install
+cp .env.example .env        # to copy data from .env.example to (and create new file) .env
+php artisan key:generate    # create unique local application key (used for encryption) | updates the 'APP_KEY' value in .env
+php artisan config:clear    # Laravel loads the new .env changes properly
+php artisan config:cache    # Laravel loads the new .env changes properly
+Set-ExecutionPolicy RemoteSigned -Scope Process
+npm install
+php artisan migrate
