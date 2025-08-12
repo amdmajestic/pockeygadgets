@@ -1,9 +1,10 @@
 <footer
-    class="mt-10 flex flex-col justify-between min-h-56  max-h-fit min-w-full max-w-full bg-neutral-900 text-white text-xs sm:text-sm md:text-base 2xl:text-xl">
+    class="mt-10 flex flex-col justify-center sm:justify-between min-h-56  max-h-fit min-w-full max-w-full bg-neutral-900 text-white text-xs sm:text-sm md:text-base 2xl:text-xl">
     <div
-        class="w-full max-h-1/2 grid grid-cols-[repeat(auto-fit,minmax(250px,auto))] gap-16 justify-center items-center py-18 px-24">
+        class="[&>*]:overflow-scroll sm:[&>*]:overflow-clip w-full max-h-1/2 grid grid-flow-dense sm:grid-cols-[repeat(auto-fit,minmax(250px,auto))] gap-16 justify-center items-center py-18 px-24">
 
-        <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
+        <div
+            class="flex flex-col gap-5 justify-around min-w-[150px] max-w-fit md:min-w-[250px] md:max-w-[250px] p-3 md:p-0 lg:min-w-fit lg:max-w-fit">
             <div class="w-24">
                 <img src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/pockey-logo-dark-scaled.webp"
                     alt="PockeyGadgets Logo" />
@@ -12,13 +13,6 @@
                 adventurer at heart, Pockey
                 Gadgets has something for
                 everyone. Our diverse range of styles caters to various personas.</p>
-            {{-- <div class="flex space-x-4">
-                
-                <div
-                    class="bg-gray-300 rounded-full p-3 transition-transform duration-300 hover:scale-105 hover:filter hover:blur-sm cursor-pointer">
-                    
-                </div>
-            </div> --}}
             <div class="flex flex-row space-x-4 justify-around text-2xl w-2/3">
                 <span
                     class="rounded-full shadow-inner bg-gray-600 shadow-gray-800 text-white p-2 cursor-pointer hover:bg-amber-300 hover:shadow-yellow-100">
@@ -38,7 +32,8 @@
                 </span>
             </div>
         </div>
-        <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
+        <div
+            class="flex flex-col gap-5 justify-around min-w-[150px] max-w-fit md:min-w-[250px] md:max-w-[250px] p-3 md:p-0 lg:min-w-fit lg:max-w-fit">
             <h1 class="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Cutomer Support</h1>
             <div>
                 <ul
@@ -50,7 +45,8 @@
                 </ul>
             </div>
         </div>
-        <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
+        <div
+            class="flex flex-col gap-5 justify-around min-w-[150px] max-w-fit md:min-w-[250px] md:max-w-[250px] p-3 md:p-0 lg:min-w-fit lg:max-w-fit">
             <h1 class="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Accessibility</h1>
             <div>
                 <ul
@@ -59,7 +55,8 @@
                 </ul>
             </div>
         </div>
-        <div class="flex flex-col gap-5 justify-around min-w-[250px] max-w-[250px] lg:min-w-fit lg:max-w-fit">
+        <div
+            class="flex flex-col gap-5 justify-around min-w-[150px] max-w-fit md:min-w-[250px] md:max-w-[250px] p-3 md:p-0 lg:min-w-fit lg:max-w-fit">
             <h1 class="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Let's get in touch</h1>
             <label for="visitor-email">
                 <span
@@ -69,9 +66,9 @@
                     arrivals, sales, exclusive content, events and
                     more! </span></label>
             <div
-                class="w-full h-12 flex flex-row justify-between rounded px-3 text-black bg-zinc-300 focus-within:bg-white delay-100">
-                <input type="email"
-                    class="w-3/4 p-4 text-lg outline-1 outline-sky-100 h-1/2 m-auto hover:shadow-inner hover:shadow-sky-50 focus:outline-none focus:hover:shadow-none focus:h-full font-mono transition delay-100"
+                class="w-max h-12 flex flex-row justify-between rounded px-3 text-black bg-zinc-300 focus-within:bg-white delay-100">
+                <input type="text"
+                    class="w-200px p-4 text-lg outline-1 outline-sky-100 h-1/2 m-auto hover:shadow-inner hover:shadow-sky-50 focus:outline-none focus:hover:shadow-none focus:h-full font-mono transition delay-100"
                     name="visitor-email">
                 <div class="h-full flex items-center justify-center text-3xl">
                     <span class="iconify" data-icon="material-symbols:arrow-right-alt" data-inline="false"></span>
@@ -85,7 +82,8 @@
             &copy; {{ date('Y') }} Pockey Gadgets All rights reserved. Designed by <a
                 href="https://pockeygadgets.co.uk/" class="text-orange-500">Pockey Gadgets</a>
         </div>
-        <div class="flex flex-col sm:flex-row gap-6 sm:gap-4 items-center pb-10 sm:pb-0">
+        <div
+            class="flex flex-col sm:flex-row gap-6 sm:gap-4 items-center pb-10 sm:pb-0 min-w-8 sm:min-w-auto">
             <span class="flex flex-col gap-0 rounded">
                 <span class="bg-blue-950 basis-1/12 mx-0.5 6 rounded-t-lg shadow-sm shadow-blue-950 p-0.5">
                 </span>

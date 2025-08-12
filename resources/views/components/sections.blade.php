@@ -45,13 +45,13 @@
                 @php
                     $href = '';
                     if ($routeAssoc['routeName']) {
-                        $href = $currentRouteName === $routeAssoc['routeName'] ? '#' : route($routeAssoc['routeName']);
+                        $href = $currentRouteName === $routeAssoc['routeName'] ? '#' : Route::authRoute($routeAssoc['routeName']);
                     } elseif ($routeAssoc['routeUrl']) {
                         $href = $currentRouteName === $routeAssoc['routeUrl'] ? '#' : $routeAssoc['routeUrl'];
                     }
                 @endphp
 
-                <a class="{{ $linkClass }}" href="{{ $href }}"
+                <a class="font-[Montserrat] text-sm md:text-base {{ $linkClass }}" href="{{ $href }}"
                     @if ($isActive) onclick="event.preventDefault();" @endif>
                     {{ $routeAssoc['routeLabel'] }}
                 </a>

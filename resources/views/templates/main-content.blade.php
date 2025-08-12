@@ -1,8 +1,8 @@
-<main class="min-h-[75vmax] p-16">
+<main class="min-h-[75vmax] m-auto self-center p-3 md:p-16">
     @section('main-content-template')
-        <div>
+        {{-- <div>
             <small>MAIN CONTENT (templates.main-content)</small>
             <hr>
-        </div>
+        </div> --}}
     @show
 </main>
