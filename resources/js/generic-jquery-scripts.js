@@ -37,6 +37,7 @@ function adjust_main_content_container() {
 }
 
 function implement_hero_section_scroll() {
+    let skipInterval = false;
     const slides = document.getElementById("carouselSlides");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
@@ -51,15 +52,21 @@ function implement_hero_section_scroll() {
 
     nextBtn.onclick = () => {
         index = (index + 1) % slideCount;
+        skipInterval = true;
         showSlide(index);
     };
     prevBtn.onclick = () => {
         index = (index - 1 + slideCount) % slideCount;
+        skipInterval = true;
         showSlide(index);
     };
 
     // Auto-scroll every 3 seconds
     setInterval(() => {
+        if (skipInterval) {
+            skipInterval = false;
+            return;
+        }
         index = (index + 1) % slideCount;
         showSlide(index);
     }, 3000);
