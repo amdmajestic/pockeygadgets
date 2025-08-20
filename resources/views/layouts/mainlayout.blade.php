@@ -11,6 +11,7 @@
     @vite('resources/css/extra-classes.css')
     @vite('resources/js/app.js')
     @vite('resources/js/generic-jquery-scripts.js')
+    @vite('resources/js/global-functions.js')
 </head>
 
 <body class="w-full h-screen">
