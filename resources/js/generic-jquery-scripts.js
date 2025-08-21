@@ -2,7 +2,7 @@ $(document).ready(function () {
     adjust_main_content_container();
     implement_hero_section_scroll();
     // implement_items_display_scroll();
-    implement_all_carousel_scroll_buttons();
+    implement_all_carousel_scroll_features();
     implement_dropdownBtns_translate_offs();
     implement_all_image_toggles();
 });
@@ -219,7 +219,7 @@ function implement_hero_section_scroll() {
 //     });
 // }
 
-function implement_all_carousel_scroll_buttons() {
+function implement_all_carousel_scroll_features() {
     const $carousel_wrappers = $(".carousel-wrapper");
 
     $carousel_wrappers.each(function (index, carousel_wrapper) {
@@ -233,48 +233,119 @@ function implement_all_carousel_scroll_buttons() {
         let itemWidth = 0;
         let animating = false;
 
-        function scrollNext() {
-            if (animating) return;
+        function beginScroll(
+            directionMultiplier,
+            insertMethod,
+            targetNode,
+            btnNode,
+            elementClasses
+        ) {
+            if (animating) return; // Prevent overlapping animations
             animating = true;
 
+            const transitionDuration = 500; // Duration in milliseconds
+
             $carousel_container.css({
-                transition: "transform 0.5s ease-in-out",
-                transform: `translateX(${-itemWidth}px)`,
+                transform: `translateX(${
+                    Number(directionMultiplier) * Number(itemWidth)
+                }px)`,
+            });
+
+            $carousel_container.addClass(elementClasses.add?.join(" "));
+            $carousel_container.removeClass(elementClasses.remove?.join(" "));
+
+            $carousel_container.one("transitionstart", () => {
+                btnNode.removeClass("bg-white cursor-pointer");
+                btnNode.addClass("bg-neutral-300 cursor-progress");
+            });
+            $carousel_container.one("transitionrun", () => {
+                insertMethod.call($carousel_container, targetNode.clone());
             });
 
             $carousel_container.one("transitionend", () => {
-                $carousel_container.append(
-                    $carousel_container.children().first()
-                );
+                targetNode.remove();
                 $carousel_container.css({
                     transition: "none",
                     transform: "translateX(0)",
                 });
-                animating = false;
+
+                setTimeout(() => {
+                    $carousel_container.removeAttr("style");
+                    btnNode.removeClass("bg-neutral-300 cursor-progress");
+                    btnNode.addClass("bg-white cursor-pointer");
+                    animating = false;
+                }, transitionDuration);
             });
+        }
+
+        function scrollNext() {
+            beginScroll(
+                -1, // Direction: move left
+                $carousel_container.append,
+                $carousel_container.children().first(),
+                $(this),
+                {
+                    add: ["justify-start"],
+                    remove: ["justify-end"],
+                }
+            );
         }
 
         function scrollPrev() {
-            if (animating) return;
-            animating = true;
+            beginScroll(
+                1, // Direction: move right
+                $carousel_container.prepend,
+                $carousel_container.children().last(),
+                $(this),
+                {
+                    add: ["justify-end"],
+                    remove: ["justify-start"],
+                }
+            );
+        }
 
-            $carousel_container.prepend($carousel_container.children().last());
-            $carousel_container.css({
-                transition: "none",
-                transform: `translateX(${-itemWidth}px)`,
-            });
+        function updateSizes() {
+            const containerWidth = $carousel_wrapper.width();
+            const $items = $carousel_container.children();
+            if ($items.length === 0) return [0, false];
 
-            setTimeout(() => {
+            itemWidth = $items.outerWidth(true);
+            const visibleCount = Math.floor(containerWidth / itemWidth) || 1;
+
+            return [visibleCount, true];
+        }
+
+        $(window).on("resize", () => {
+            const [visibleCount, canScroll] = updateSizes();
+            if (canScroll) {
                 $carousel_container.css({
-                    transition: "transform 0.5s ease-in-out",
+                    transition: "none",
                     transform: "translateX(0)",
                 });
-            }, 20);
+                $carousel_container.removeAttr("style");
+                // $carousel_container.addClass("justify-start");
+                // $carousel_container.removeClass("justify-end");
+            }
+        });
 
-            $carousel_container.one("transitionend", () => {
-                animating = false;
-            });
-        }
+        $next_btn.on("click", scrollNext);
+        $prev_btn.on("click", scrollPrev);
+
+        // Initial setup
+        updateSizes();
+
+        // function enableMouseDragScroll($carousel_container) {
+        // $carousel_wrapper.on("mousedown touchstart", function () {
+        //     $(this)
+        //         .removeClass("overflow-x-hidden overflow-hidden")
+        //         .addClass("overflow-x-scroll");
+        // });
+        // $carousel_wrapper.on("mouseup touchend", function () {
+        //     $(this)
+        //         .removeClass("overflow-x-scroll")
+        //         .addClass("overflow-x-hidden overflow-hidden");
+        // });
+        // }
 
         // function enableDragScroll($carousel_container) {
         //     let isDragging = false;
@@ -313,89 +384,97 @@ function implement_all_carousel_scroll_buttons() {
         // }
 
         /** */
-        
-        // function bindAutoAdjustObserver($carousel_container) {
-        //     // Set up the IntersectionObserver to detect when the first item is visible
-        //     const observer = new IntersectionObserver(
-        //         (entries, observer) => {
-        //             entries.forEach((entry) => {
-        //                 if (entry.isIntersecting && entry.target === items[0]) {
-        //                     // Automatically scroll the first item into view
-        //                     entry.target.scrollIntoView({
-        //                         behavior: "smooth",
-        //                         block: "nearest",
-        //                         inline: "start",
-        //                     });
-        //                     observer.disconnect(); // Stop observing after the first element is in view
+
+        // function bindAutoAdjustObserver($container) {
+        //     var container = $container.get(0);
+        //     var debounceTimeout = null;
+
+        //     // $container.css("overflow-x", "scroll");
+        //     $container.removeClass("overflow-x-hidden overflow-hidden");
+        //     $container.addClass("overflow-x-scroll");
+
+        //     $container.on("scroll", function () {
+        //         // Clear previous debounce timer
+        //         if (debounceTimeout) clearTimeout(debounceTimeout);
+
+        //         // $container.css("overflow-x", "scroll");
+        //         $container.removeClass("overflow-x-hidden overflow-hidden");
+        //         $container.addClass("overflow-x-scroll");
+
+        //         // Set debounce to detect when scrolling stops
+        //         debounceTimeout = setTimeout(function () {
+        //             // Hide overflow after scrolling ends
+        //             // $container.css("overflow-x", "hidden");
+        //             // $container.removeAttr("style");
+        //             $container.removeClass("overflow-x-scroll");
+        //             $container.addClass("overflow-x-hidden overflow-hidden");
+
+        //             var $items = $container.children();
+        //             var containerRect = container.getBoundingClientRect();
+
+        //             // Find visible items
+        //             var visibleItems = $items.filter(function () {
+        //                 var rect = this.getBoundingClientRect();
+        //                 return (
+        //                     rect.right > containerRect.left &&
+        //                     rect.left < containerRect.right
+        //                 );
+        //             });
+
+        //             if (visibleItems.length === 0) return;
+
+        //             // Find leftmost and rightmost visible items
+        //             var leftmost = visibleItems.first();
+        //             var rightmost = visibleItems.first();
+
+        //             visibleItems.each(function () {
+        //                 var rect = this.getBoundingClientRect();
+        //                 var leftRect = leftmost.get(0).getBoundingClientRect();
+        //                 var rightRect = rightmost
+        //                     .get(0)
+        //                     .getBoundingClientRect();
+
+        //                 if (rect.left < leftRect.left) {
+        //                     leftmost = $(this);
+        //                 }
+        //                 if (rect.right > rightRect.right) {
+        //                     rightmost = $(this);
         //                 }
         //             });
-        //         },
-        //         { threshold: 0.5 }
-        //     ); // Trigger when 50% of the element is in view
 
-        //     // Start observing the first item
-        //     $carousel_container.children().each(function () {
-        //         observer.observe($(this));
+        //             var containerBounding = container.getBoundingClientRect();
+        //             var rightmostBounding = rightmost
+        //                 .get(0)
+        //                 .getBoundingClientRect();
+        //             var leftmostBounding = leftmost
+        //                 .get(0)
+        //                 .getBoundingClientRect();
+
+        //             // Decide which item to scroll into view
+        //             if (
+        //                 (rightmostBounding.right - containerBounding.left) /
+        //                     containerBounding.width >
+        //                 0.45
+        //             ) {
+        //                 rightmost[0].scrollIntoView({
+        //                     behavior: "smooth",
+        //                     inline: "start",
+        //                 });
+        //             } else {
+        //                 leftmost[0].scrollIntoView({
+        //                     behavior: "smooth",
+        //                     inline: "start",
+        //                 });
+        //             }
+        //         }, 200); // debounce delay
         //     });
         // }
 
-        function updateSizes() {
-            const containerWidth = $carousel_wrapper.width();
-            const $items = $carousel_container.children();
-            if ($items.length === 0) return [0, false];
+        /** */
 
-            itemWidth = $items.outerWidth(true);
-            const visibleCount = Math.floor(containerWidth / itemWidth) || 1;
-
-            // if ($(window).width() < 640) {
-            //     $carousel_wrapper.parent().find(".prevBtn, .nextBtn").hide();
-            //     $carousel_container.css({
-            //         transform: "none",
-            //         transition: "none",
-            //         "flex-direction": "column",
-            //     });
-            //     return [visibleCount, false];
-            // } else {
-            //     $carousel_wrapper.parent().find(".prevBtn, .nextBtn").show();
-            //     $carousel_container.css({
-            //         "flex-direction": "row",
-            //         transition: "transform 0.5s ease-in-out",
-            //     });
-            //     return [visibleCount, true];
-            // }
-
-            return [visibleCount, true];
-        }
-
-        $(window).on("resize", () => {
-            const [visibleCount, canScroll] = updateSizes();
-            if (canScroll) {
-                $carousel_container.css({
-                    transition: "none",
-                    transform: "translateX(0)",
-                });
-            }
-        });
-
-        $next_btn.on("click", scrollNext);
-        $prev_btn.on("click", scrollPrev);
-
-        $carousel_wrapper.on("mousedown touchstart", function () {
-            $(this)
-                .removeClass("overflow-x-hidden")
-                .addClass("overflow-x-scroll");
-        });
-        $carousel_wrapper.on("mouseup touchend", function () {
-            $(this)
-                .removeClass("overflow-x-scroll")
-                .addClass("overflow-x-hidden");
-        });
-
+        // enableMobileDragScroll($carousel_container);
         // enableDragScroll($carousel_container);
         // bindAutoAdjustObserver($carousel_container);
-
-        // Initial setup
-        updateSizes();
     });
 }
 
