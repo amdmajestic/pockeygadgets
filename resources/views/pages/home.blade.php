@@ -256,7 +256,8 @@
 
 
         {{-- <div class="grid grid-cols-[repeat(auto-fit,minmax(325px,auto))] gap-6 mt-12 overflow-x-scroll w-full max-h-[350px] scrollbar-none"> --}}
-        <div
+        <div data-aos="zoom-in" data-aos-delay="750" data-aos-easing="ease-in" data-aos-mirror="false"
+            data-aos-anchor-placement="center-center"
             class="flex flex-col md:flex-row justify-center md:justify-evenly gap-6 mt-14 overflow-x-scroll w-full md:w-11/12 h-auto scrollbar-none">
             {{-- @for ($i = 0; $i < 3; $i++) --}}
             <div
@@ -293,7 +294,7 @@
         {{-- </div> --}}
 
 
-        <div
+        <div data-aos="fade-up" data-aos-easing="linear" data-aos-anchor-placement="center-bottom"
             class="relative flex flex-row rounded-[20px] w-full h-[600px] mt-14 bg-[url('https://pockeygadgets.co.uk/wp-content/uploads/2025/07/Headphones-banner.webp')] bg-[length:100%_135%] bg-no-repeat bg-center">
             {{-- <span
                 class="w-full h-full "> --}}
@@ -318,7 +319,7 @@
             </div>
         </div>
 
-        <div
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"
             class="w-full h-max md:h-[750px] flex flex-col md:flex-row gap-6 items-start justify-between rounded-[20px] mb-12">
             {{-- <a href="#"> --}}
             <div class="basis-2/6 h-full grow content-center">
@@ -337,7 +338,8 @@
                     class="m-auto w-5/6 grid grid-cols-2 gap-x-2 gap-y-7 md:gap-x-8 md:gap-y-8 text-wrap text-base [&>*]:w-30 [&>*]:text-center">
                     <li>
                         <div>
-                            <span class="iconify m-auto" data-icon="mdi:waveform" data-width="50" data-height="50"></span>
+                            <span class="iconify m-auto" data-icon="mdi:waveform" data-width="50"
+                                data-height="50"></span>
                             <p>Powerful, Room‑Filling Sound</p>
                         </div>
                     </li>
@@ -373,7 +375,8 @@
         </div>
 
 
-        <div class="flex flex-col gap-0 justify-between w-full h-[950px] mt-96">
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+            class="flex flex-col gap-0 justify-between w-full h-[950px] mt-96">
             <div class="basis-1/4 font-semibold text-center">
                 <h2 class="text-5xl w-2/4 font-[Montserrat] m-auto">Bring Quality Gadgets into Your Home</h2>
             </div>
@@ -385,14 +388,15 @@
         </div>
 
 
-        <div class="mt-12">
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="mt-12">
             <h2 class="text-3xl w-full text-center font-semibold font-[Montserrat]">Accessories</h2>
             <div class="w-full">
 
             </div>
         </div>
 
-        <div class="relative w-full mx-auto p-6 select-none h-auto">
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+            class="relative w-full mx-auto p-6 select-none h-auto">
             <button type="button"
                 class="prevBtn absolute -left-1 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 md:items-center md:justify-center z-10 md:flex cursor-pointer overflow-hidden">
                 <span class="iconify text-xl aspect-square w-full h-full md:w-auto md:h-auto"
@@ -601,8 +605,8 @@
             </button>
         </div>
 
-
-        <div class="mt-14 flex justify-between items-center space-x-4 py-4 bg-zinc-50 w-full">
+        <div data-aos="fade-down" data-aos-anchor-placement="top-bottom"
+            class="mt-14 flex justify-between items-center space-x-4 py-4 bg-zinc-50 w-full">
             <div class="flex items-center space-x-2 p-4 rounded-lg">
                 <span class="bg-yellow-400 p-4 rounded-full text-black font-extralight">
                     <span class="iconify" data-icon="mdi:cash-multiple" data-width="24" data-height="24"></span>

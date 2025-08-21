@@ -6,3 +6,4 @@
 
 - npm install jquery --save
 
+- npm install aos
