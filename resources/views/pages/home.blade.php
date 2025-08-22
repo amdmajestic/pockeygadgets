@@ -221,7 +221,8 @@
                                         @endswitch
                                     @endforeach
                                 </div>
-                                <img loading="lazy" src={{ $homeImageSlideshow[$i]['image'] ?? $homeImageSlideshow[0]['image'] }}
+                                <img loading="lazy"
+                                    src={{ $homeImageSlideshow[$i]['image'] ?? $homeImageSlideshow[0]['image'] }}
                                     alt="Headphone Demo Image" class="w-full h-[550px] rounded-[6%] shadow-lg bg-cover">
                             </a>
                         </div>
@@ -266,7 +267,8 @@
                     class="absolute bottom-0 left-1/2 -translate-x-1/2 inline-flex text-center py-2.5 px-5 rounded-lg bg-orange-500 select-none hover:bg-black text-white transition-colors delay-200 ease-out peer">
                     <span>Shop</span><span class="iconify font-extralight" data-icon="mdi-light:chevron-right"
                         data-width="24" data-height="24"></span></a>
-                <img loading="lazy" class="absolute top-0 left-0 w-full h-full md:w-[650px] md:h-[275px] lg:w-[750px] 2xl:h-[375px] aspect-[4/3] bg-contain rounded-3xl peer-hover:scale-110 transition-transform delay-300 ease-in-out -z-10 object-contain object-center"
+                <img loading="lazy"
+                    class="absolute top-0 left-0 w-full h-full md:w-[650px] md:h-[275px] lg:w-[750px] 2xl:h-[375px] aspect-[4/3] bg-contain rounded-3xl peer-hover:scale-110 transition-transform delay-300 ease-in-out -z-10 object-contain object-center"
                     src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/Android-G2000-Pro-Bluetooth-Head-category.webp"
                     alt="Headphone Demo Image">
             </div>
@@ -276,7 +278,8 @@
                     class="absolute bottom-0 left-1/2 -translate-x-1/2 inline-flex text-center py-2.5 px-5 rounded-lg bg-orange-500 select-none hover:bg-black text-white transition-colors delay-200 ease-out peer">
                     <span>Shop</span><span class="iconify font-extralight" data-icon="mdi-light:chevron-right"
                         data-width="24" data-height="24"></span></a>
-                <img loading="lazy" class="absolute top-0 left-0 w-full h-full md:w-[650px] md:h-[275px] lg:w-[750px] 2xl:h-[375px] aspect-[4/3] bg-contain rounded-3xl peer-hover:scale-110 transition-transform delay-300 ease-in-out -z-10 object-contain object-center"
+                <img loading="lazy"
+                    class="absolute top-0 left-0 w-full h-full md:w-[650px] md:h-[275px] lg:w-[750px] 2xl:h-[375px] aspect-[4/3] bg-contain rounded-3xl peer-hover:scale-110 transition-transform delay-300 ease-in-out -z-10 object-contain object-center"
                     src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/RemaxTWS-10Plus-6.webp"
                     alt="Headphone Demo Image">
             </div>
@@ -286,7 +289,8 @@
                     class="absolute bottom-0 left-1/2 -translate-x-1/2 inline-flex text-center py-2.5 px-5 rounded-lg bg-orange-500 select-none hover:bg-black text-white transition-colors delay-200 ease-out peer">
                     <span>Shop</span><span class="iconify font-extralight" data-icon="mdi-light:chevron-right"
                         data-width="24" data-height="24"></span></a>
-                <img loading="lazy" class="absolute top-0 left-0 w-full h-full md:w-[650px] md:h-[275px] lg:w-[750px] 2xl:h-[375px] aspect-[4/3] bg-contain rounded-3xl peer-hover:scale-110 transition-transform delay-300 ease-in-out -z-10 object-contain object-center"
+                <img loading="lazy"
+                    class="absolute top-0 left-0 w-full h-full md:w-[650px] md:h-[275px] lg:w-[750px] 2xl:h-[375px] aspect-[4/3] bg-contain rounded-3xl peer-hover:scale-110 transition-transform delay-300 ease-in-out -z-10 object-contain object-center"
                     src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/Power-Bank.webp" alt="Headphone Demo Image">
             </div>
             {{-- @endfor --}}
@@ -310,7 +314,7 @@
             </div>
             <div class="absolute bottom-0 right-0 w-max h-max bg-white rounded-tl-[20px]">
                 <button type="button"
-                    class="bg-inherit flex flex-row gap-3 justify-center items-center text-white text-center content-center text-lg flex-wrap px-6 py-4 m-4 rounded-[30px] select-none">
+                    class="bg-inherit flex flex-row gap-3 justify-center items-center text-white text-center content-center text-xl flex-wrap px-6 py-4 m-4 rounded-[30px] select-none cursor-pointer">
                     <span
                         class="iconify rounded-full font-extralight bg-orange-500 hover:bg-black transition-colors delay-200 ease-out peer h-[48px] w-[48px] p-1 text-center content-center"
                         data-icon="mdi:play-outline" data-width="28" data-height="28"></span>
@@ -324,7 +328,8 @@
             {{-- <a href="#"> --}}
             <div class="basis-2/6 h-full grow content-center">
                 <img loading="lazy" src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/power-bank-683x1024.jpeg"
-                    alt="Headphone Demo Image" class="w-full h-[150%] aspect-[4/3] rounded-[20px] shadow-sm object-contain">
+                    alt="Headphone Demo Image"
+                    class="w-full h-[150%] aspect-[4/3] rounded-[20px] shadow-sm object-contain">
             </div>
             {{-- </a> --}}
             <div class="flex flex-col gap-6 basis-1/3 h-min justify-end items-center mt-auto mb-0 mx-15">
@@ -397,13 +402,6 @@
 
         <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"
             class="relative w-full mx-auto p-6 select-none h-auto">
-            <button type="button"
-                class="prevBtn absolute -left-1 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 md:items-center md:justify-center z-10 md:flex cursor-pointer overflow-hidden">
-                <span class="iconify text-xl aspect-square w-full h-full md:w-auto md:h-auto"
-                    data-icon="mdi:arrow-left-thin" data-width="24" data-height="24"></span>
-            </button>
-
-
             <div
                 class="carousel-wrapper m-auto scrollbar-none overflow-hidden [&>*]:h-[350px] sm:[&>*]:h-[550px] md:[&>*]:h-[550px] lg:[&>*]:h-[550px] xl:[&>*]:h-[450px]">
 
@@ -427,7 +425,8 @@
                         <a href="https://pockeygadgets.co.uk/product/magnetic-power-bank-uk-15w-10000mah/"
                             class="absolute inset-2 z-10 image-toggle-trigger" aria-label="View Power Bank Product"></a>
 
-                        <img loading="lazy" src="https://pockeygadgets.co.uk/wp-content/uploads/2020/05/power-bank-product.webp"
+                        <img loading="lazy"
+                            src="https://pockeygadgets.co.uk/wp-content/uploads/2020/05/power-bank-product.webp"
                             data-hover-image="https://pockeygadgets.co.uk/wp-content/uploads/2020/05/powerbank-product-imag3-3.webp"
                             alt="Power Bank 15W magnetic 10000mAh"
                             class="w-full basis-3/4 px-1 object-cover aspect-[4/3] transition-all duration-300 hover:scale-110" />
@@ -443,7 +442,7 @@
                             <div class="flex flex-row justify-between items-center text-xs md:text-sm 3xl:text-base gap-2">
                                 <span class="font-mono text-gray-800 pl-3">£24.99</span>
                                 <a href="/?add-to-cart=2382"
-                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6  rounded-lg bg-white text-gray-800 z-20">
+                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6 rounded-lg bg-white text-gray-800 z-20">
                                     Add To Basket
                                     <span class="iconify text-md" data-icon="mdi:shopping-outline"></span>
                                 </a>
@@ -468,7 +467,8 @@
                         <a href="https://pockeygadgets.co.uk/product/magnetic-power-bank-uk-15w-10000mah/"
                             class="absolute inset-2 z-10 image-toggle-trigger" aria-label="View Power Bank Product"></a>
 
-                        <img loading="lazy" src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/airpods-product-700x798.webp"
+                        <img loading="lazy"
+                            src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/airpods-product-700x798.webp"
                             data-hover-image="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/ChatGPT-Image-Jul-17-2025-04_40_27-PM-700x798.png"
                             alt="Power Bank 15W magnetic 10000mAh"
                             class="w-full basis-3/4 px-1 object-cover aspect-[4/3] transition-all duration-300 hover:scale-110" />
@@ -484,7 +484,7 @@
                             <div class="flex flex-row justify-between items-center text-xs md:text-sm 3xl:text-base gap-2">
                                 <span class="font-mono text-gray-800 pl-3">£24.99</span>
                                 <a href="/?add-to-cart=2382"
-                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6  rounded-lg bg-white text-gray-800 z-20">
+                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6 rounded-lg bg-white text-gray-800 z-20">
                                     Add To Basket
                                     <span class="iconify text-md" data-icon="mdi:shopping-outline"></span>
                                 </a>
@@ -509,7 +509,8 @@
                         <a href="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/headphones-700x798-1.webp"
                             class="absolute inset-2 z-10 image-toggle-trigger" aria-label="View Power Bank Product"></a>
 
-                        <img loading="lazy" src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/headphones-700x798-1.webp"
+                        <img loading="lazy"
+                            src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/headphones-700x798-1.webp"
                             data-hover-image="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/headphones-700x798-1.webp"
                             alt="Power Bank 15W magnetic 10000mAh"
                             class="w-full basis-3/4 px-1 object-cover aspect-[4/3] transition-all duration-300 hover:scale-110" />
@@ -533,7 +534,7 @@
                             <div class="flex flex-row justify-between items-center text-xs md:text-sm 3xl:text-base gap-2">
                                 <span class="font-mono text-gray-800 pl-3">£39.99</span>
                                 <a href="/?add-to-cart=2382"
-                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6  rounded-lg bg-white text-gray-800 z-20">
+                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6 rounded-lg bg-white text-gray-800 z-20">
                                     Add To Basket
                                     <span class="iconify text-md" data-icon="mdi:shopping-outline"></span>
                                 </a>
@@ -558,7 +559,8 @@
                         <a href="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/headphones-700x798-1.webp"
                             class="absolute inset-2 z-10 image-toggle-trigger" aria-label="View Power Bank Product"></a>
 
-                        <img loading="lazy" src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/power-bank-product-2-700x798.webp"
+                        <img loading="lazy"
+                            src="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/power-bank-product-2-700x798.webp"
                             data-hover-image="https://pockeygadgets.co.uk/wp-content/uploads/2025/07/porer-bank-product-1-700x798.webp"
                             alt="Power Bank 15W magnetic 10000mAh"
                             class="w-full basis-3/4 px-1 object-cover aspect-[4/3] transition-all duration-300 hover:scale-110" />
@@ -583,20 +585,21 @@
                             <div class="flex flex-row justify-between items-center text-xs md:text-sm 3xl:text-base gap-2">
                                 <span class="font-mono text-gray-800 pl-3">£39.99</span>
                                 <a href="/?add-to-cart=2382"
-                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6  rounded-lg bg-white text-gray-800 z-20">
+                                    class="font-mono flex gap-3 items-center pl-4 py-3 pr-6 rounded-lg bg-white text-gray-800 z-20">
                                     Add To Basket
                                     <span class="iconify text-md" data-icon="mdi:shopping-outline"></span>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
-
             </div>
 
+            <button type="button"
+                class="prevBtn absolute -left-1 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 md:items-center md:justify-center z-10 md:flex cursor-pointer overflow-hidden">
+                <span class="iconify text-xl aspect-square w-full h-full md:w-auto md:h-auto"
+                    data-icon="mdi:arrow-left-thin" data-width="24" data-height="24"></span>
+            </button>
 
             <button type="button"
                 class="nextBtn absolute -right-1 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 md:items-center md:justify-center z-10 md:flex cursor-pointer overflow-hidden">
